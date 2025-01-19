@@ -17,8 +17,11 @@ function findTheSmallestNumber() {
         smallestNumber = myNumbers[i]
     }
   }
+  return smallestNumber
 }
-console.log()
+
+let small = findTheSmallestNumber()
+console.log(small)
 findTheSmallestNumber()
 
 function findLargestNumber() {
@@ -31,8 +34,11 @@ function findLargestNumber() {
         largestNumber = myNumbers[i]
     }
   }
+  return largestNumber
 }
-console.log(largestNumber)
+
+let answer = findLargestNumber()
+console.log(answer)
 findLargestNumber()
 
 function findAverage() {
@@ -41,6 +47,18 @@ function findAverage() {
     sum += myNumbers[i];
   }
   let average = sum / myNumbers.length
+  return average
 }
-console.log(average)
+// console.log(average)
 findAverage()
+
+function render() {
+  // Call the created functions
+  smallestNumberElement.innerText = findTheSmallestNumber()
+ largestNumberElement.innerText = findLargestNumber()
+ averageNumberElement.innerText = findAverage()
+}
+
+submissionBtn.addEventListener("click", function () {
+  render();
+});
